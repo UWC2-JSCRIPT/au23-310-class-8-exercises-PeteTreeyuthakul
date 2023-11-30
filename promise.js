@@ -1,7 +1,7 @@
-let myPromise = new Promise(function(resolve, reject) {
+let mathPromise = new Promise(function(resolve, reject) {
   setTimeout(function() {
     let num = Math.random()
-    if(num >= 0.5){
+    if(num > 0.5){
       resolve();
     }else{
       reject();
@@ -9,7 +9,7 @@ let myPromise = new Promise(function(resolve, reject) {
   }, 1000);
 });
 
-myPromise
+mathPromise
   .then(function(){
     console.log('success')
   })

@@ -6,6 +6,7 @@ const dateEl = document.getElementById('date');
 formEl.addEventListener('submit', function(e) {
   e.preventDefault();
 
+
   const year = yearEl.value;
   const month = monthEl.value;
   const date = dateEl.value;
@@ -19,6 +20,9 @@ formEl.addEventListener('submit', function(e) {
   const url = `${BASE_URL}/${year}-${month}-${date}/${bookType}.json?api-key=${api_Key}`;
 
   const bookContainer = document.getElementById('books-container')
+  while(bookContainer.firstElementChild){
+    bookContainer.removeChild(bookContainer.firstElementChild)
+  }
 
   fetch(url)
   .then(function(data) {
